@@ -9,7 +9,7 @@ $ docker run -d --name postgres --restart always \
 -e ALLOW_IP_RANGE=0.0.0.0/0 \
 -v /home/postgres/data:/var/lib/postgresql \
 -p 5432:5432 \
--t postgis
+-d postgres
 ```
 `--name` 自定义容器名称
 
