@@ -1,7 +1,9 @@
 # [简介](#Overview)
+
 本文章为快速入门教程，介绍一些基本用法，可以立马使用起来。如果需要详细的介绍可以访问[官网](https://www.markdownguide.org/)
 
 ## [基础语法](#BasicSyntax)
+
 以下是[John Gruber](https://zh.wikipedia.org/wiki/%E7%B4%84%E7%BF%B0%C2%B7%E6%A0%BC%E9%AD%AF%E4%BC%AF)(Markdown发布格式的发明者)在原始设计文件中的元素。所有Markdown应用程序都支持这些元素。
 
 | Element | Description |
@@ -24,20 +26,30 @@
 
 
 ### [表格](#Table)
-形如
-:  
+
+形如: 
+
 \| Syntax | Description |  
 \| ----------- | ----------- |  
 \| row1 | Title |  
 \| row2 | Text |
+
+You can align text in the columns to the left, right, or center by adding a colon (:) to the left, right, or on both side of the hyphens within the header row.
+
+| :---        |    :----:   |          ---: |
+
 示例：
+
 | Syntax | Description |  
 | ----------- | ----------- |  
 | row1 | Title |  
 | row2 | Text |
 
+
+
 ### [代码块](#FencedCodeBlock)
 形如：
+
 \```json
 {
   "firstName": "John",
@@ -45,6 +57,7 @@
   "age": 25
 }  
 示例：
+
 ```json
 {
   "firstName": "John",
@@ -74,27 +87,33 @@ Here's a sentence with a footnote.[^1]
 
 ### [定义](#DefinitionList)
 形如：
+
 term
 \: definition
 
 示例：
+
 term
 : definition
 
 ### [删除线](#Strikethrough)
 形如：
+
 \~~The world is flat.~~  
 
 示例：
+
 ~~The world is flat.~~
 
 ### [任务清单](#TaskList)
 
 形如：
+
 \- [x] Write the press release
 \- [ ] Update the website
 
 示例：
+
 - [x] Write the press release
 - [ ] Update the website
 
