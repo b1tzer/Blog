@@ -7,11 +7,9 @@
 
 防火墙分为软件防火墙和硬件防火墙，他们的优缺点
 :
-- 硬件防火墙
-: 拥有经过特别设计的硬件及芯片，性能高、成本高 (当然硬件防火墙也是有软件的，只不过有部分功能由硬件实现，所以硬件防火墙其实是硬件 + 软件的方式)；
+- 硬件防火墙：拥有经过特别设计的硬件及芯片，性能高、成本高 (当然硬件防火墙也是有软件的，只不过有部分功能由硬件实现，所以硬件防火墙其实是硬件 + 软件的方式)；
 
-- 软件防火墙
-: 应用软件处理逻辑运行于通用硬件平台之上的防火墙，性能比硬件防火墙低、成本低。
+- 软件防火墙: 应用软件处理逻辑运行于通用硬件平台之上的防火墙，性能比硬件防火墙低、成本低。
 
 ### 1.2 iptables 是什么？Netfilter 与 iptables 的关系
 
@@ -83,6 +81,13 @@ Netfilter 所设置的规则是存放在内核空间中的，而 iptables 是一
 这5 条链 (即 5 个关卡) 中，并不是每条链都能应用所有类型的表，事实上除了 `Ouptput` 链能同时有四种表，其他链都只有两种或三种表: 
 
 ![linux_iptables_table_chain_relation](https://i.loli.net/2021/09/28/X5ntkg82TbxE1vo.png)
+
+
+
+
+![linux_iptables_flow](https://i.loli.net/2021/09/30/6lHgTKDpMjzshb8.png)
+
+
 
 从图中可以看出，所有链路遵循一个规则
 : 匹配的顺序 **raw→mangle→nat→filter**
@@ -352,7 +357,7 @@ iptables 执行规则是根据文本顺序由上至下查找，找到第一条�
     
   * `-t`: 指定插入到哪个表中，默认为 “filter” 表；
     
-  * `-s`: 匹配源 ip，s: source；
+  * `-s`: 匹配源 ip；
     
   * `-j`: 跳转指定跳转的目标，如自定义的链， action，如 ACCEPT、DROP、REJECT 等。
 
@@ -496,6 +501,7 @@ filter 表中的 `INPUT` 链开头插入一条记录，将来自 `10.39.129.2` �
 `iptables -t filter -I INPUT -m string --algo bm --string "XXOO" -j REJECT`
 
 `-m string`: 表示使用 string 模块
+
 `--algo bm`: 表示使用 bm 算法来匹配 index.html 中的字符串，“algo”是 “algorithm” 的缩写，另外还有一种算法叫“kmp”，所以 --algo 可以指定两种值，bm 或 kmp，貌似是 bm 算法速度比较快。
 
 ### 4.5 time 扩展模块
