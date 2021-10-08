@@ -46,6 +46,11 @@
     `local_ip` 和 `local_port` 配置为本地需要暴露到公网的服务地址和端口。`remote_port` 表示在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。
 
 4. 先通过 ./frps -c ./frps.ini 启动服务端，再通过 ./frpc -c ./frpc.ini 启动客户端。如果需要在后台长期运行，建议结合其他工具使用，例如 systemd 和 supervisor。
+   1. frp v0.37 自带服务文件,稍加配置即可使用
+   2. 将 frpc、frps 拷贝到 /usr/bin
+   3. 将 frpc.ini、frps.ini 拷贝到 /etc/frp/
+   4. 将 systemd/frpc.service、frps.service 拷贝到 /lib/systemd/system/
+   5. sudo systemctl start frps.service
 
 5. 此时我们就可以通过公网 IP 访问 SSH 服务。假设用户名为test：
 

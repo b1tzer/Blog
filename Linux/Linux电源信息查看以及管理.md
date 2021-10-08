@@ -56,21 +56,6 @@ STOP_CHARGE_THRESH_BAT0=80
 START_CHARGE_THRESH_BAT1=75
 STOP_CHARGE_THRESH_BAT1=80
 
-
-
-
-
-
-
-
 # 配置生效
 sudo tlp start
 ```
-
-
-
-
-
-
-
-SWQPM19315000783
